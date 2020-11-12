@@ -1,0 +1,53 @@
+body {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Arial';
+}
+
+h1 {
+    font-family: 'Gruppo';
+    font-size: 4rem;
+}
+
+h3 {
+    font-family: 'Gruppo';
+    font-size: 2rem;
+    margin-bottom: 6rem;
+}
+
+hr {
+    width: 25%;
+}
+
+.button {
+    margin: auto;
+    background: #96D738!important;
+    box-shadow: inset 0 -5px 0 0 rgba(0,0,0,.1), 0 3px 8px rgba(0,0,0,.14);
+    color: white!important;
+    border: none!important;
+    font-family: "Varela Round";
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 15px;
+    height: 4rem;
+    width: 500px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    padding-top: 1.5rem;
+}
+
+.button:hover {
+    background-color: #96D738!important
+}
+
+.button:active {
+    background-color: #96D738!important;
+    border: 1px solid #96D738;
+    transform: translateY(4px);
+    box-shadow: none;
+}
