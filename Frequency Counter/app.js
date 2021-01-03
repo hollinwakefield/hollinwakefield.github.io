@@ -25,8 +25,6 @@ tastiness.innerHTML = '<strong>Disgustin</strong>'
 //       return b[1] - a[1];
 //   });
 
-//   return freqRank;
-// }
 // getWordCount(array); // { apple: 3}, {orange: 2}
 
 // let str = document.getElementById("count")
