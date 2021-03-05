@@ -1,7 +1,6 @@
 // let str = "with the urban tribe, or our parents, until our brains just mature on their own and somehow suddenly know the sure answers to our lives. But that’s not how the brain works. And that’s not how life works. Besides, even if our brains could wait, love and work can’t. The twenties are, indeed, the time to get busy. It’s forward thinking for an uncertain age.";
 
 let freqRank = [];
-let hi;
 
 // Create array of each individual (non-unique) word to be counted
 function getWordArray() {
