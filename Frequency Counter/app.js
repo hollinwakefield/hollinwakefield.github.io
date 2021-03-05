@@ -1,7 +1,10 @@
 // let str = "with the urban tribe, or our parents, until our brains just mature on their own and somehow suddenly know the sure answers to our lives. But that’s not how the brain works. And that’s not how life works. Besides, even if our brains could wait, love and work can’t. The twenties are, indeed, the time to get busy. It’s forward thinking for an uncertain age.";
 
+let freqRank = [];
 
+// Create array of each individual (non-unique) word to be counted
 function getWordArray() {
+    freqRank = [];
     // Get input from form
     let inputString = document.querySelectorAll('input')[0].value
     
@@ -18,6 +21,8 @@ function getWordArray() {
     return getWordCount(wordListArray); 
 }
 
+
+// Count and sort the words from the wordListArray
 function getWordCount(wordListArray) {
     // Add each string to a counting object
     let map = {};
@@ -26,8 +31,7 @@ function getWordCount(wordListArray) {
         map[item] = (map[item] + 1) || 1;
     }
     
-    // Convert object into array of objects for each key:value pair
-    let freqRank = [];
+    // Convert object into array of elements for each key:value pair
     for (let word in map) {
         freqRank.push([word, map[word]]);
     }
@@ -36,15 +40,59 @@ function getWordCount(wordListArray) {
     freqRank.sort(function(a, b) {
         return b[1] - a[1];
     });
-    console.log(`The frequency rank object: ${freqRank}`)
-    return freqRank;
+    
+    // Add frequency rank to each word that appears
+    for (let i = 0; i < freqRank.length; i++) {
+        freqRank[i].unshift(i + 1)
+    }
+    
+    // console.log(`The frequency rank object: ${freqRank}`)
+    // console.log(`First item: ${freqRank[0][0]}. ${freqRank[0][1]}: ${freqRank[0][2]}`)
+    // console.log(`Second item: ${freqRank[1][0]}. ${freqRank[1][1]}: ${freqRank[1][2]}`)
+    // console.log(`Third item: ${freqRank[2][0]}. ${freqRank[2][1]}: ${freqRank[2][2]}`)
+    // console.log(`Fourth item: ${freqRank[3][0]}. ${freqRank[3][1]}: ${freqRank[3][2]}`)
+    // console.log(`Fifth item: ${freqRank[4][0]}. ${freqRank[4][1]}: ${freqRank[4][2]}`)
+    return freqRank
+    return displayfreqRank(freqRank)
+}
+
+function displayfreqRank(freqRank) {
+    let tableCheck = document.querySelector('table')
+    if (tableCheck) {
+        tableCheck.remove();
+    }
+    const table = document.createElement('table');
+    let body = document.querySelector('body')
+    body.append(table)
+    
+    const tr0 = document.createElement('tr');
+    const th01 = document.createElement('th');
+    const th02 = document.createElement('th');
+    const th03 = document.createElement('th');
+    th01.textContent = 'Rank';
+    th02.textContent = 'Word';
+    th03.textContent = 'Count';
+    tr0.append(th01, th02, th03);
+    table.append(tr0);
+
+    for (let i = 0; i < freqRank.length; i++){
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td');
+        const td2 = document.createElement('td');
+        const td3 = document.createElement('td');
+        td1.textContent = freqRank[i][0];
+        td2.textContent = freqRank[i][1];
+        td3.textContent = freqRank[i][2];
+        tr.append(td1, td2, td3);
+        table.append(tr);
+    }
 }
 
 window.onload=function(){
-    const count = document.querySelector('#countInput')
-    count.addEventListener('submit', function(e) {
-        e.preventDefault();
+    const count = document.querySelector('button')
+    count.addEventListener('click', function(e) {
         getWordArray();
+        displayfreqRank(freqRank)
     });
 }
 // getWordCount(wordListArray); // { apple: 3}, {orange: 2}
