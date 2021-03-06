@@ -6,7 +6,7 @@ let freqRank = [];
 function getWordArray() {
     freqRank = [];
     // Get input from form
-    let inputString = document.querySelectorAll('input')[0].value
+    let inputString = document.querySelectorAll('textarea')[0].value
     
     // Remove undesired characters from the string
     inputString = inputString.replace(/[^\w\s\'\’]|_/g, "")
@@ -69,7 +69,7 @@ function displayfreqRank(freqRank) {
     }
     const table = document.createElement('table');
     table.className = 'tableClass'; 
-
+    
     let body = document.querySelector('mySidepanel')
     mySidepanel.append(table);
     
@@ -121,7 +121,9 @@ window.onload=function(){
 
 /* Set the width of the sidebar to 250px (show it) */
 function openNav() {
-    document.getElementById("mySidepanel").style.width = "30%";
+    document.querySelector('body').style.width="70%"
+    document.getElementById('mySidepanel').style.width="30%";
+    document.querySelector('table').style.marginLeft='50px';   
 }
   
 /* Set the width of the sidebar to 0 (hide it) */
