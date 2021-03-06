@@ -131,4 +131,5 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidepanel").style.width = "0";
     document.querySelector('body').style.width="100%";
+    document.querySelector('textarea').style.width="36%"
 }
