@@ -57,6 +57,22 @@ form {
     box-shadow: none;
 }
 
+.table {
+    font-size: 36px;
+}
+
+.table-header-class {
+    font-size: 36px;
+    font-family: "Varela Round";
+    color: black;
+}
+
+.table-data-class {
+    font-size: 24px;
+    font-family: "Varela Round";
+    color: black;
+}
+
 textarea {
     border-radius: 20px;
     border: none;

@@ -56,22 +56,33 @@ function getWordCount(wordListArray) {
     return displayfreqRank(freqRank)
 }
 
+function assignTDClass() {
+    td1.className = 'tdClass';
+    td2.className = 'tdClass';
+    td3.className = 'tdClass';
+}
+
 function displayfreqRank(freqRank) {
     let tableCheck = document.querySelector('table')
     if (tableCheck) {
         tableCheck.remove();
     }
     const table = document.createElement('table');
+    table.className = 'tableClass'; 
+
     let body = document.querySelector('body')
-    body.append(table)
+    body.append(table);
     
     const tr0 = document.createElement('tr');
     const th01 = document.createElement('th');
     const th02 = document.createElement('th');
     const th03 = document.createElement('th');
     th01.textContent = 'Rank';
+    th01.className = 'table-header-class'
     th02.textContent = 'Word';
+    th02.className = 'table-header-class'
     th03.textContent = 'Count';
+    th03.className = 'table-header-class'
     tr0.append(th01, th02, th03);
     table.append(tr0);
 
@@ -81,8 +92,11 @@ function displayfreqRank(freqRank) {
         const td2 = document.createElement('td');
         const td3 = document.createElement('td');
         td1.textContent = freqRank[i][0];
+        td1.className = 'table-data-class';
         td2.textContent = freqRank[i][1];
+        td2.className = 'table-data-class';
         td3.textContent = freqRank[i][2];
+        td3.className = 'table-data-class';
         tr.append(td1, td2, td3);
         table.append(tr);
     }
