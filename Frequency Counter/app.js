@@ -70,8 +70,8 @@ function displayfreqRank(freqRank) {
     const table = document.createElement('table');
     table.className = 'tableClass'; 
 
-    let body = document.querySelector('body')
-    body.append(table);
+    let body = document.querySelector('mySidepanel')
+    mySidepanel.append(table);
     
     const tr0 = document.createElement('tr');
     const th01 = document.createElement('th');
@@ -107,6 +107,7 @@ window.onload=function(){
     count.addEventListener('click', function(e) {
         getWordArray();
         displayfreqRank(freqRank)
+        openNav();
     });
 }
 // getWordCount(wordListArray); // { apple: 3}, {orange: 2}
@@ -117,3 +118,13 @@ window.onload=function(){
 //   document.getElementById(count).submit();
 //   return false;
 // };
+
+/* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "30%";
+}
+  
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+}
