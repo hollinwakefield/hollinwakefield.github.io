@@ -122,6 +122,7 @@ window.onload=function(){
 /* Set the width of the sidebar to 250px (show it) */
 function openNav() {
     document.querySelector('body').style.width="70%"
+    document.querySelector('textarea').style.width="51.428571428571429%"
     document.getElementById('mySidepanel').style.width="30%";
     document.querySelector('table').style.marginLeft='50px';   
 }
@@ -129,4 +130,5 @@ function openNav() {
 /* Set the width of the sidebar to 0 (hide it) */
 function closeNav() {
     document.getElementById("mySidepanel").style.width = "0";
+    document.querySelector('body').style.width="100%";
 }
