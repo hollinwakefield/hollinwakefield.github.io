@@ -1,6 +1,8 @@
 // let str = "with the urban tribe, or our parents, until our brains just mature on their own and somehow suddenly know the sure answers to our lives. But that’s not how the brain works. And that’s not how life works. Besides, even if our brains could wait, love and work can’t. The twenties are, indeed, the time to get busy. It’s forward thinking for an uncertain age.";
 
 let freqRank = [];
+let totalCount = 0;
+let uniqueCount = 0;
 
 // Create array of each individual (non-unique) word to be counted
 function getWordArray() {
@@ -15,12 +17,23 @@ function getWordArray() {
     // Convert string into array of strings
     let wordListArray = inputString.split(' ');
 
+    // Update totalCount
+    getTotalCount(wordListArray);
+
     // Convert each string in array to uppercase
     wordListArray = wordListArray.map(function(x){ return x.toUpperCase(); })
     // console.log(`The word list array: ${wordListArray}`);
     return getWordCount(wordListArray); 
 }
 
+function getTotalCount(wordListArray) {
+    totalCount = wordListArray.length
+    console.log(totalCount)
+}
+
+function getUniqueCount(freqRank) {
+
+}
 
 // Count and sort the words from the wordListArray
 function getWordCount(wordListArray) {

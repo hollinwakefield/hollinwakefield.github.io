@@ -120,9 +120,16 @@ textarea::-webkit-scrollbar-thumb {
     padding-top: 60px; /* Place content 60px from the top */
 }
 
-#sidepanel-h1 {
+.sidepanel-h1 {
     color: black;
     font-size: 36px;
+}
+
+.sidepanel-h2 {
+    color: black;
+    font-size: 30px;
+    font-family: "Varela Round";
+    padding-left: 20px;
 }
 
 /* The sidepanel links */
