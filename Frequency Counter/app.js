@@ -121,7 +121,7 @@ function displayfreqRank(freqRank) {
 
   document.querySelector(
     "#uniquewordcount"
-  ).innerHTML = `Total Words: ${freqRank.length}`;
+  ).innerHTML = `Unique Words: ${freqRank.length}`;
 }
 
 window.onload = function () {
