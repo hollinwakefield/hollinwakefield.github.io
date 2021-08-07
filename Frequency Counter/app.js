@@ -23,13 +23,11 @@ function getWordArray() {
   wordListArray = wordListArray.map(function (x) {
     return x.toUpperCase();
   });
-  // console.log(`The word list array: ${wordListArray}`);
   return getWordCount(wordListArray);
 }
 
 function getTotalCount(wordListArray) {
   totalCount = wordListArray.length;
-  console.log(totalCount);
   //   let totalDisplay = document.querySelector("#totalwordcount");
   //   totalDisplay = totalCount;
   //   return totalDisplay;
